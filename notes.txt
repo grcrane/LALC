@@ -3,3 +3,66 @@
 cdn (01/10/21)
 <link rel='stylesheet' href="https://cdn.jsdelivr.net/gh/grcrane/lalc@main/style.css" />
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/grcrane/lalc@main/servicewp.js"></script>
+
+-- Sermons wp body
+
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+    <article class="imag" id="post-<?php the_ID(); ?>">
+      <header class="entry-header">
+        <h1 class="entry-title">Worship Services</h1> 
+      </header>
+      <div class="entry-content">
+        <p style="margin-top: 0px;">Los Altos Lutheran has available audio files of past readings, gospels and sermons, as well as pdf files of the worship bulletin for that Service.</p>
+      <figure style="display:none;">
+        <figcaption>
+          Children's Message
+        </figcaption>
+        <audio class="player" controls="controls" title="Sunday January 3, 2021 Service">
+          <source src="https://drive.google.com/uc?export=download&id=1YUOn1EL-6D2BQAmFvEfsLIEka7UL31If">  
+        </audio>
+        
+        <a class="figDownload" href="https://drive.google.com/uc?authuser=0&id=1YUOn1EL-6D2BQAmFvEfsLIEka7UL31If&export=download">Download</a>
+      </figure>
+
+<div id="yearsList">
+  <form id="selectOptions">
+    <select id=sermonby name="sermonby"></select>
+  </form>
+  <ul id="serviceList"></ul>
+</div>
+
+<div id="details" style="display:none;">
+<a id="closeDetails" href="#"><--Return to list</a>
+<div id="detailsBox">
+<h1 id="detailsTitle"></h1>
+<p id="detailsPreacher"></p>
+</div>
+<div id="audioPlayers"></div>
+<div id="detailsBull"></div>
+</div>
+
+</div>
+    
+    </article>
+
+    </main><!-- #main -->
+  </div><!-- #primary -->
+
+--- Newsletter body wp
+
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article class="imag" id="post-<?php the_ID(); ?>">
+        <header class="entry-header">
+          <h1 class="entry-title">Newsletters</h1> 
+        </header>
+        <div class="entry-content">
+          <p style="margin-top: 0px;">Los Altos Lutheran Church publishes a monthly newsletter, Spirit of Christ at Los Altos Lutheran, to inform the congregation and friends of the events and activities at the church. Recent newsletters are provided here. Click on a month below to view the newsletter as a pdf* file. You may print copies of the newsletter for your personal use.</p>
+          <div id="yearsList">
+            <ul id="newsList"></ul>
+          </div>
+        </div>
+      </article>
+    </main><!-- #main -->
+  </div><!-- #primary -->
