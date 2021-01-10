@@ -106,7 +106,7 @@ function fillServiceList(showpreacher) {
     var bulllink = '';
     if (bulllist[0].c[3] != null) {
       bulllink = '<a href="https://drive.google.com/file/d/' + bulllist[0].c[3].v + 
-        '/view?usp=sharing" target="_new">Service Bulletin</a>';
+        '/view?usp=sharing" target="_blank">Service Bulletin</a>';
     }
 
     var str = '';
