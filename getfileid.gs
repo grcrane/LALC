@@ -1,5 +1,4 @@
 function updateAudio() {
-  
   var listnames = [];
   var listids = [];
   var audiofolder = '1IdRQs6G-C6wvWiY_voD8cb2LT8g5Ccd3'; // audio_services folder_id 
@@ -12,13 +11,15 @@ function updateAudio() {
   var targetValues = [];
   var sourceRange = activeSheet.getRange(1, 1, lastRow, lastCol+1);
   var sourceData = sourceRange.getValues();
-  Logger.log(lastRow + " " + lastCol);
+  //Logger.log(lastRow + " " + lastCol);
   
   // loop through spreadsheet and fill in missing ID's
   sourceData.forEach(function(row) {
-    Logger.log('row6=' + row[6] + ' row2=' + row[2]);
+    //Logger.log('row6=' + row[6] + ' row2=' + row[2]);
     if (row[6] == '') {
-    var id = getTheId(audiofolder, listnames, listids, row[2]);
+    var fileName = row[2];
+    var year = fileName.substr(0,4);
+    var id = getTheId(audiofolder, listnames, listids, row[2], year);
     row[6] = listids[id];
     }
   });
@@ -39,12 +40,14 @@ function updateBulletin() {
   var targetValues = [];
   var sourceRange = activeSheet.getRange(1, 1, lastRow, lastCol+1);
   var sourceData = sourceRange.getValues();
-  Logger.log(lastRow + " " + lastCol);
+  //Logger.log(lastRow + " " + lastCol);
   
   // loop through spreadsheet and fill in missing ID's
   sourceData.forEach(function(row) {
     if (row[3] == '') {
-    var id = getTheId(bulletinfolder, listnames, listids, row[2]);
+    var fileName = row[2];
+    var year = fileName.substr(0,4);
+    var id = getTheId(bulletinfolder, listnames, listids, row[2], year);
     row[3] = listids[id];
     }
   });
@@ -65,12 +68,15 @@ function updateNewsletter() {
   var targetValues = [];
   var sourceRange = activeSheet.getRange(1, 1, lastRow, lastCol+1);
   var sourceData = sourceRange.getValues();
-  Logger.log(lastRow + " " + lastCol);
+  //Logger.log(lastRow + " " + lastCol);
   
   // loop through spreadsheet and fill in missing ID's
   sourceData.forEach(function(row) {
     if (row[3] == '') {
-    var id = getTheId(newsletterfolder, listnames, listids, row[2]);
+    var fileName = row[2];
+    var year = row[0].substr(0,4);
+    //Logger.log('looking for=' + fileName + ' year=' + year);
+    var id = getTheId(newsletterfolder, listnames, listids, row[2], year);
     row[3] = listids[id];
     }
   });
@@ -83,12 +89,12 @@ function updateNewsletter() {
 /*            Builds arrays.   If found in array then just returns      */
 /* -------------------------------------------------------------------- */
 
-function getTheId(lookin, listnames, listids, fileName) {
+function getTheId(lookin, listnames, listids, fileName, year) {
   var i = listnames.indexOf(fileName);
   if (i > 0) {return i;}
   var audiofolders = DriveApp.getFolderById(lookin);
   var audiosub = audiofolders.getFolders();
-  var year = fileName.substr(0,4);
+  //var year = fileName.substr(0,4);
   while (audiosub.hasNext()) {
     var folders = audiosub.next();
     var folderid = folders.getId(); 
