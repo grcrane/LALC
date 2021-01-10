@@ -1,0 +1,94 @@
+#yearsList {
+  display: none;
+}
+
+#details {
+    display: none;
+  }
+#serviceList {
+  list-style:none;
+  padding:0 0 0 0;
+  margin:0;
+}
+#serviceList div {
+  width:170px;
+  display:block;
+  background-color:lightgray;
+  font-weight:bold;
+  margin:10px 0;
+  text-align:center;
+  cursor:pointer;
+  padding:5 5 5 7px;
+  list-style:circle;
+  border-radius:10px;
+}
+#serviceList ul {
+  list-style:none;
+  padding:0 0 0 0;
+}
+#serviceList ul {
+  display:none;
+}
+#serviceList ul li{
+  font-weight:normal;
+  cursor:auto;
+  background-color:#fff;
+  padding:0 0 0 7px;
+}
+#serviceList a{
+  text-decoration:none;
+}
+#serviceList a:hover {
+  text-decoration:underline;
+}
+
+#serviceList ul {
+  display: none;
+}
+
+#serviceList ul.activelist {
+  display: block;
+
+}
+
+figure.template, #details {
+  display: none;
+}
+
+#audioPlayers {
+  width: 98%;
+}
+
+#audioPlayers figure {
+  margin: 1em 0; 
+}
+
+#audioPlayers audio {
+  width: 100%;
+}
+
+#audioPlayers figcaption {
+  font-style: italic;
+}
+
+#detailsBox {
+  border-radius: 10px;
+  width: 98%;
+  padding: 1%;
+  min-height: 100px;
+  background-color: #C9D3CC;
+  margin: 0;
+  margin-top: 15px;
+}
+#detailsPreacher {
+  font-style: italic;
+  margin-bottom: 1.5em;
+}
+
+#detailsBull {
+  margin-bottom: 1.5em;
+}
+
+#closeDetails {
+  margin-bottom: 15px;
+}
