@@ -14,6 +14,7 @@ cdn (01/10/21)
       </header>
       <div class="entry-content">
         <p style="margin-top: 0px;">Los Altos Lutheran has available audio files of past readings, gospels and sermons, as well as pdf files of the worship bulletin for that Service.</p>
+        <h3 id="loading">Loading please wait..</h3>
       <figure style="display:none;">
         <figcaption>
           Children's Message

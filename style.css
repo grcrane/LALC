@@ -44,10 +44,11 @@
 
 #serviceList ul {
   display: none;
+
 }
 
 #serviceList ul.activelist {
-  display: block;
+  /*display: block;*/
 
 }
 
@@ -91,4 +92,13 @@ figure.template, #details {
 
 #closeDetails {
   margin-bottom: 15px;
+}
+#newsList ul li a.pdf {
+    background: transparent 
+    url("http://www.losaltoslutheran.org/lalc_prod/wp-content/themes/lalctheme/images/pdfLink.png") 
+    no-repeat scroll 0 11px;
+    padding: 5px 0 5px 30px;
+}
+#loading {
+  color: red;
 }

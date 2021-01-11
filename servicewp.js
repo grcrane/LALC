@@ -73,14 +73,16 @@ function fillServiceList(showpreacher) {
   jQuery(str).appendTo('#serviceList');
   jQuery("#serviceList > li > div").unbind('click');
   jQuery("#serviceList > li > div").click(function(){
-    if (jQuery(this).next().hasClass('activelist')) {
-      jQuery(this).next().removeClass('activelist');
+    if (jQuery(this).next().is(":visible")) {
+      jQuery(this).next().slideUp();
     }
     else {
-      jQuery(this).next().addClass('activelist');
+      jQuery('#serviceList ul').slideUp();
+      //jQuery(this).next().addClass('activelist');
+      jQuery(this).next().slideDown();
     }
   });
-  jQuery('#serviceList ul:eq(0)').addClass('activelist');
+  jQuery('#serviceList ul:eq(0)').slideDown();
 
   /* ----------------------------------------------------------- */
   /* Open the service details block on click of date             */
@@ -106,7 +108,7 @@ function fillServiceList(showpreacher) {
     var bulllink = '';
     if (bulllist[0].c[3] != null) {
       bulllink = '<a href="https://drive.google.com/file/d/' + bulllist[0].c[3].v + 
-        '/view?usp=sharing" target="_blank">Service Bulletin</a>';
+        '/view?usp=sharing" target="_new">Service Bulletin</a>';
     }
 
     var str = '';
@@ -186,6 +188,7 @@ thedate = eval("new " + datelist[0].c[0].v);
     fillServiceList(jQuery(this).val());
   })
 
+  jQuery('#loading').css('display','none');
   jQuery('#yearsList').css('display','block');
 
 });
