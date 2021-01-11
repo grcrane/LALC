@@ -93,6 +93,52 @@ figure.template, #details {
 #closeDetails {
   margin-bottom: 15px;
 }
+#newsList {
+  list-style:none;
+  padding:0 0 0 0;
+  margin:0;
+}
+#newsList div {
+  width:170px;
+  display:block;
+  background-color:lightgray;
+  font-weight:bold;
+  margin:10px 0;
+  text-align:center;
+  cursor:pointer;
+  padding:5 5 5 7px;
+  list-style:circle;
+  border-radius:10px;
+}
+#newsList ul {
+  list-style:none;
+  padding:0 0 0 0;
+}
+#newsList ul {
+  display:none;
+}
+#newsList ul li{
+  font-weight:normal;
+  cursor:auto;
+  background-color:#fff;
+  padding:0 0 0 7px;
+}
+#newsList a{
+  text-decoration:none;
+}
+#newsList a:hover {
+  text-decoration:underline;
+}
+
+#newsList ul {
+  display: none;
+
+}
+
+#newsList ul.activelist {
+  /*display: block;*/
+
+}
 #newsList ul li a.pdf {
     background: transparent 
     url("http://www.losaltoslutheran.org/lalc_prod/wp-content/themes/lalctheme/images/pdfLink.png") 
