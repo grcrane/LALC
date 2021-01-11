@@ -68,3 +68,24 @@ cdn (01/10/21)
       </article>
     </main><!-- #main -->
   </div><!-- #primary -->
+
+--- Add read-more link to events
+
+<script>
+$( document ).ready(function() {
+    $('.summary-item-list .summary-item')
+        .each(function() {
+            var href = $(this)
+                .find('.summary-content .summary-title a').attr('href');
+            var read = '<!-- Read More Link -->' +
+                '<a href="' + href + 
+                '" class="summary-read-more-link">Read More &#8594;</a>';
+            $(this).find('.summary-excerpt').after(read);
+    })
+});
+ </script>
+<style>
+.sqs-block-summary-v2 .summary-read-more-link {
+   display: block;
+  }
+</style>
