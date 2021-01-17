@@ -148,3 +148,19 @@ figure.template, #details {
 #loading {
   color: red;
 }
+#detailsBox {
+    background: none;
+    width: 100%;
+    padding: 0;
+    min-height: unset;
+    border: none;
+    margin: 0;
+}
+#detailsTitle {
+    font-size: 1.25em;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+form#selectOptions select {
+    max-width: 100%;
+}
