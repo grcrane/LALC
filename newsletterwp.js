@@ -113,6 +113,7 @@ datelist = getAjaxData(url);
     fillnewsList(jQuery(this).val());
   })
 
+  jQuery('#loading').css('display','none');
   jQuery('#yearsList').css('display','block');
 
 });
