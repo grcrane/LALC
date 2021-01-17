@@ -61,6 +61,7 @@ cdn (01/10/21)
         </header>
         <div class="entry-content">
           <p style="margin-top: 0px;">Los Altos Lutheran Church publishes a monthly newsletter, Spirit of Christ at Los Altos Lutheran, to inform the congregation and friends of the events and activities at the church. Recent newsletters are provided here. Click on a month below to view the newsletter as a pdf* file. You may print copies of the newsletter for your personal use.</p>
+          <h3 id="loading">Loading please wait..</h3>
           <div id="yearsList">
             <ul id="newsList"></ul>
           </div>
