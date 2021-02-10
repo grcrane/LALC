@@ -148,7 +148,9 @@ var url = 'https://docs.google.com/spreadsheets/u/0/d/'
 preachlist = getAjaxData(url);
 
 //Get a list of available audio recordings   
-var query = 'SELECT A, F, count(A) WHERE F IS NOT NULL GROUP BY A, F ORDER BY A DESC'
+//var query = 'SELECT A, F, count(A) WHERE F IS NOT NULL GROUP BY A, F ORDER BY A DESC'
+var query = 'SELECT A, F, count(A) WHERE F IS NOT NULL ' +
+ 'AND E="Gospel & Sermon" GROUP BY A, F ORDER BY A DESC'
 var url = 'https://docs.google.com/spreadsheets/u/0/d/' 
   + file_id + '/gviz/tq?tqx=&sheet=audio&tq=' + escape(query);
 datelist = getAjaxData(url);
