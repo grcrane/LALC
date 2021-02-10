@@ -51,22 +51,26 @@ function fillServiceList(showpreacher) {
     })
   }
 
+  var prevdate = ''; 
   testlist.forEach(function(item, key) {
     if (item.c[0] != null) {
-      var thedate = eval("new " + item.c[0].v);
-      var preacher = item.c[1].v;
-      if (showpreacher == null || showpreacher == '' || showpreacher == preacher) {
-      var year = thedate.getFullYear();
-        if (prevyear != year) {
-          if (!prevyear) { str += '</ul></li>';}
-          prevyear = year;
-          str += "</ul></li><li class='liYear'><div>" + year + "</div><ul>";
+      if (item.c[0].v != prevdate) { // skip if duplicate date 
+        var thedate = eval("new " + item.c[0].v);
+        var preacher = item.c[1].v;
+        if (showpreacher == null || showpreacher == '' || showpreacher == preacher) {
+        var year = thedate.getFullYear();
+          if (prevyear != year) {
+            if (!prevyear) { str += '</ul></li>';}
+            prevyear = year;
+            str += "</ul></li><li class='liYear'><div>" + year + "</div><ul>";
+          }
+          str += '<li><a href="#" class=showdate data-date="' + year + '-' + 
+            thedate.getMonth() + '-' + thedate.getDate() + 
+            '" data-preacher="' + preacher + '" >' 
+            + thedate.toString().substr(0,15) + '</a></li>';
         }
-        str += '<li><a href="#" class=showdate data-date="' + year + '-' + 
-          thedate.getMonth() + '-' + thedate.getDate() + 
-          '" data-preacher="' + preacher + '" >' 
-          + thedate.toString().substr(0,15) + '</a></li>';
       }
+      prevdate = item.c[0].v; 
     }
   })
 
@@ -150,7 +154,7 @@ preachlist = getAjaxData(url);
 //Get a list of available audio recordings   
 //var query = 'SELECT A, F, count(A) WHERE F IS NOT NULL GROUP BY A, F ORDER BY A DESC'
 var query = 'SELECT A, F, count(A) WHERE F IS NOT NULL ' +
- 'AND E="Gospel & Sermon" GROUP BY A, F ORDER BY A DESC'
+ 'GROUP BY A, F ORDER BY A DESC'
 var url = 'https://docs.google.com/spreadsheets/u/0/d/' 
   + file_id + '/gviz/tq?tqx=&sheet=audio&tq=' + escape(query);
 datelist = getAjaxData(url);
