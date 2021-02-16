@@ -143,6 +143,7 @@ function fillServiceList(showpreacher) {
 
 }
 
+
 jQuery( document ).ready(function() {
 
   //Get a list of preachers for the dropdown
