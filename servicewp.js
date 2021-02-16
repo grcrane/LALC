@@ -121,8 +121,8 @@ function fillServiceList(showpreacher) {
     var preacher = '';
     daylist.forEach(function(item, key) {
       console.log(item);
-      var src = 'https://drive.google.com/uc?export=download&id=' + item.c[6].v;
-      var down = 'https://drive.google.com/uc?authuser=0&id=' + item.c[6].v + '&export=download';
+      var src = 'https://drive.google.com/uc?export=download&id=' + item.c[7].v;
+      var down = 'https://drive.google.com/uc?authuser=0&id=' + item.c[7].v + '&export=download';
       if (item.c[3] != null) { title = item.c[3].v;}
       if (item.c[5] != null) { preacher = item.c[5].v;}
       if (item.c[3] != null) {
