@@ -128,7 +128,7 @@ function fillServiceList(showpreacher) {
       if (item.c[6] != null) { preacher = item.c[6].v;} // speaker
       if (item.c[3] != null) {
         var caption = item.c[4].v;
-        if (item.c[5] != null) {caption = caption + " (" + preacher + ")";}
+        if (preacher) {caption = caption + " (" + preacher + ")";}
         jQuery('figure.template').eq(0).clone().appendTo("#audioPlayers")
           .css('display','block')
           .removeClass('template')
