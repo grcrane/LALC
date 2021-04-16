@@ -81,10 +81,12 @@ figure.template, #details {
   margin: 0;
   margin-top: 15px;
 }
-#detailsPreacher {
+#detailsPreacher,
+#details .detailsPreacher {
   font-style: italic;
   margin-bottom: 1.5em;
 }
+
 
 #detailsBull {
   margin-bottom: 1.5em;
@@ -156,7 +158,8 @@ figure.template, #details {
     border: none;
     margin: 0;
 }
-#detailsTitle {
+#detailsTitle,
+#details .detailsTitle {
     font-size: 1.25em;
     margin-top: 15px;
     margin-bottom: 10px;
