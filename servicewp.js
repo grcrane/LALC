@@ -137,8 +137,8 @@ function fillServiceList(showpreacher) {
       if (item.c[5] != null) { preacher = item.c[5].v;} // preacher
       if (item.c[6] != null) { speaker = item.c[6].v;} // speaker
       if (serviceTime != prevServiceTime) {
-        $('<h1 class="detailsTime">' + serviceTime + '</div>').appendTo("#audioPlayers");
-        $('<p class="detailsPreacher">' + serviceTime + '</div>').appendTo("#audioPlayers");
+        jQuery('<h1 class="detailsTime">' + serviceTime + '</div>').appendTo("#audioPlayers");
+        jQuery('<p class="detailsPreacher">' + serviceTime + '</div>').appendTo("#audioPlayers");
       }
       if (item.c[3] != null) {
         var caption = item.c[4].v;
