@@ -119,16 +119,17 @@ function fillServiceList(showpreacher) {
     jQuery("#audioPlayers").html('');
     var title = '';
     var preacher = '';
+    var speaker = ''; 
     daylist.forEach(function(item, key) {
       console.log(item);
       var src = 'https://drive.google.com/uc?export=download&id=' + item.c[7].v;
       var down = 'https://drive.google.com/uc?authuser=0&id=' + item.c[7].v + '&export=download';
       if (item.c[3] != null) { title = item.c[3].v;}
       if (item.c[5] != null) { preacher = item.c[5].v;} // preacher
-      if (item.c[6] != null) { preacher = item.c[6].v;} // speaker
+      if (item.c[6] != null) { speaker = item.c[6].v;} // speaker
       if (item.c[3] != null) {
         var caption = item.c[4].v;
-        if (preacher) {caption = caption + " (" + preacher + ")";}
+        if (speaker) {caption = caption + " (" + speaker + ")";}
         jQuery('figure.template').eq(0).clone().appendTo("#audioPlayers")
           .css('display','block')
           .removeClass('template')
