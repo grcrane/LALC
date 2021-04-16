@@ -120,13 +120,26 @@ function fillServiceList(showpreacher) {
     var title = '';
     var preacher = '';
     var speaker = ''; 
+    var prevServiceTime = ''; 
+    var serviceTime = '1000';  // 10am
     daylist.forEach(function(item, key) {
+      if (item.c[1] != null) {
+        serviceTime = item.c[1].v
+      } else {
+        servicetime = '1000';
+      }
+
+      
       console.log(item);
       var src = 'https://drive.google.com/uc?export=download&id=' + item.c[7].v;
       var down = 'https://drive.google.com/uc?authuser=0&id=' + item.c[7].v + '&export=download';
       if (item.c[3] != null) { title = item.c[3].v;}
       if (item.c[5] != null) { preacher = item.c[5].v;} // preacher
       if (item.c[6] != null) { speaker = item.c[6].v;} // speaker
+      if (serviceTime != prevServiceTime) {
+        $('<h1 class="detailsTime">' + serviceTime + '</div>').appendTo("#audioPlayers");
+        $('<p class="detailsPreacher">' + serviceTime + '</div>').appendTo("#audioPlayers");
+      }
       if (item.c[3] != null) {
         var caption = item.c[4].v;
         if (speaker) {caption = caption + " (" + speaker + ")";}
