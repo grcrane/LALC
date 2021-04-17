@@ -132,7 +132,10 @@ function fillServiceList(showpreacher) {
       if (item.c[3] != null) { title = item.c[3].v;}
       if (item.c[5] != null) { preacher = item.c[5].v;} // preacher
       if (item.c[6] != null) { speaker = item.c[6].v;} // speaker
-      if (item.c[1] != null) {serviceTitle = item.c[1].v} 
+      serviceTime = '';
+      if (item.c[1] != null) {serviceTime = item.c[1].v} 
+      serviceTitle = serviceTime + title; 
+    console.log(serviceTitle);
       if (serviceTitle != prevServiceTitle) {
         jQuery('<h1 class="detailsTime">' + title + '</div>').appendTo("#audioPlayers");
         jQuery('<p class="detailsPreacher">' + speaker + '</div>').appendTo("#audioPlayers");
