@@ -56,6 +56,10 @@ figure.template, #details {
   display: none;
 }
 
+#audioPlayers h1 {
+  font-size: 32px;
+}
+
 #audioPlayers {
   width: 98%;
 }
