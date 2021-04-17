@@ -90,3 +90,53 @@ $( document ).ready(function() {
    display: block;
   }
 </style>
+
+-------------- 04/17/21
+
+<body>
+
+   <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+    <article class="imag" id="post-<?php the_ID(); ?>">
+      <header class="entry-header">
+        <h1 class="entry-title">Worship Services</h1> 
+      </header>
+      <div class="entry-content">
+        <p style="margin-top: 0px;">Los Altos Lutheran has available audio files of past readings, gospels and sermons, as well as pdf files of the worship bulletin for that Service.</p>
+        <h3 id="loading">Loading please wait..</h3>
+      <figure style="display:none;">
+        <figcaption>
+          Children's Message
+        </figcaption>
+        <audio class="player" controls="controls" title="Sunday January 3, 2021 Service">
+          <source src="https://drive.google.com/uc?export=download&id=1YUOn1EL-6D2BQAmFvEfsLIEka7UL31If">  
+        </audio>
+        
+        <a class="figDownload" href="https://drive.google.com/uc?authuser=0&id=1YUOn1EL-6D2BQAmFvEfsLIEka7UL31If&export=download">Download</a>
+      </figure>
+
+<div id="yearsList">
+  <form id="selectOptions">
+    <select id=sermonby name="sermonby"></select>
+  </form>
+  <ul id="serviceList"></ul>
+</div>
+
+<div id="details" style="display:none;">
+<a id="closeDetails" href="#"><--Return to list</a>
+<div id="detailsBox">
+<h1 id="detailsTitle"></h1>
+<p id="detailsPreacher"></p>
+</div>
+<div id="audioPlayers"></div>
+<div id="detailsBull"></div>
+</div>
+
+</div>
+    
+    </article>
+
+    </main><!-- #main -->
+  </div><!-- #primary -->
+
+</body>
