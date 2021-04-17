@@ -123,10 +123,6 @@ function fillServiceList(showpreacher) {
     var prevServiceTitle = ''; 
     var serviceTitle = '';  // 10am
     daylist.forEach(function(item, key) {
-      
-
-      
-      console.log(item);
       var src = 'https://drive.google.com/uc?export=download&id=' + item.c[7].v;
       var down = 'https://drive.google.com/uc?authuser=0&id=' + item.c[7].v + '&export=download';
       if (item.c[3] != null) { title = item.c[3].v;}
@@ -135,10 +131,9 @@ function fillServiceList(showpreacher) {
       serviceTime = '';
       if (item.c[1] != null) {serviceTime = item.c[1].v} 
       serviceTitle = serviceTime + title; 
-    console.log(serviceTitle);
       if (serviceTitle != prevServiceTitle) {
         jQuery('<h1 class="detailsTime">' + title + '</div>').appendTo("#audioPlayers");
-        jQuery('<p class="detailsPreacher">' + speaker + '</div>').appendTo("#audioPlayers");
+        jQuery('<span class="detailsPreacher">' + preacher + '</span>').appendTo("#audioPlayers");
         prevServiceTitle = serviceTitle; 
       }
       if (item.c[3] != null) {
@@ -152,13 +147,10 @@ function fillServiceList(showpreacher) {
           .parent().parent().find('a.figDownload').attr('href',down);
       }
     })
-    //jQuery('#detailsTitle').html(title);
-    jQuery("#detailsPreacher").html(preacher);
     jQuery("#detailsBull").html(bulllink);
   });
 
 }
-
 
 jQuery( document ).ready(function() {
 
