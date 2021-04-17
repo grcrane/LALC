@@ -120,14 +120,10 @@ function fillServiceList(showpreacher) {
     var title = '';
     var preacher = '';
     var speaker = ''; 
-    var prevServiceTime = ''; 
-    var serviceTime = '1000';  // 10am
+    var prevServiceTitle = ''; 
+    var serviceTitle = '';  // 10am
     daylist.forEach(function(item, key) {
-      if (item.c[1] != null) {
-        serviceTime = item.c[1].v
-      } else {
-        servicetime = '1000';
-      }
+      
 
       
       console.log(item);
@@ -136,9 +132,11 @@ function fillServiceList(showpreacher) {
       if (item.c[3] != null) { title = item.c[3].v;}
       if (item.c[5] != null) { preacher = item.c[5].v;} // preacher
       if (item.c[6] != null) { speaker = item.c[6].v;} // speaker
-      if (serviceTime != prevServiceTime) {
-        jQuery('<h1 class="detailsTime">' + serviceTime + '</div>').appendTo("#audioPlayers");
-        jQuery('<p class="detailsPreacher">' + serviceTime + '</div>').appendTo("#audioPlayers");
+      if (item.c[1] != null) {serviceTitle = item.c[1].v} 
+      if (serviceTitle != prevServiceTitle) {
+        jQuery('<h1 class="detailsTime">' + title + '</div>').appendTo("#audioPlayers");
+        jQuery('<p class="detailsPreacher">' + speaker + '</div>').appendTo("#audioPlayers");
+        prevServiceTitle = serviceTitle; 
       }
       if (item.c[3] != null) {
         var caption = item.c[4].v;
@@ -151,7 +149,7 @@ function fillServiceList(showpreacher) {
           .parent().parent().find('a.figDownload').attr('href',down);
       }
     })
-    jQuery('#detailsTitle').html(title);
+    //jQuery('#detailsTitle').html(title);
     jQuery("#detailsPreacher").html(preacher);
     jQuery("#detailsBull").html(bulllink);
   });
