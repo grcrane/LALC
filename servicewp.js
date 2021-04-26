@@ -133,7 +133,7 @@ function fillServiceList(showpreacher) {
       serviceTitle = serviceTime + title; 
       if (serviceTitle != prevServiceTitle) {
         jQuery('<h1 class="detailsTime">' + title + '</div>').appendTo("#audioPlayers");
-        jQuery('<span class="detailsPreacher">' + preacher + '</span>').appendTo("#audioPlayers");
+        jQuery('<span class="detailsPreacher">Presiding: ' + preacher + '</span>').appendTo("#audioPlayers");
         prevServiceTitle = serviceTitle; 
       }
       if (item.c[3] != null) {
@@ -155,7 +155,7 @@ function fillServiceList(showpreacher) {
 jQuery( document ).ready(function() {
 
   //Get a list of preachers for the dropdown
-var query = 'SELECT F, count(F) GROUP BY F ORDER BY F DESC'
+var query = 'SELECT F, count(A) GROUP BY F ORDER BY F DESC'
 var url = 'https://docs.google.com/spreadsheets/u/0/d/' 
   + file_id + '/gviz/tq?tqx=&sheet=audio&tq=' + escape(query);
 preachlist = getAjaxData(url);
